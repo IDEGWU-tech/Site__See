@@ -1,0 +1,65 @@
+/* Theme: purple, gold, white */
+:root{
+  --purple-1: #6f4bd8;
+  --purple-2: #7b5cf6;
+  --gold: #d4af37;
+  --white: #ffffff;
+  /* white at bottom to purple at top (bottom -> top) */
+  --bg-gradient: linear-gradient(to top, #ffffff, var(--purple-2));
+  --card-bg: #ffffff;
+  --glass: rgba(255,255,255,0.9);
+  --text-dark: #111318;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0;color:var(--text-dark);background:var(--bg-gradient);}
+
+.loading-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(247,243,255,0.95));z-index:9999;transition:opacity .4s ease}
+.loading-content{display:flex;flex-direction:column;align-items:center;gap:12px}
+.loading-text{font-size:20px;color:var(--purple-2);font-weight:700}
+.logo-loading{width:92px;height:92px;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.08))}
+
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--card-bg);box-shadow:0 6px 18px rgba(20,12,60,0.06);border-bottom-left-radius:8px;border-bottom-right-radius:8px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:56px;height:56px;object-fit:contain}
+.brand-text h1{margin:0;font-size:20px;color:var(--text-dark)}
+.brand-text p{margin:0;font-size:12px;color:rgba(17,19,24,0.6)}
+.nav{display:flex;gap:8px}
+.btn-primary{background:linear-gradient(90deg,var(--purple-2),var(--purple-1));border:none;padding:10px 14px;color:var(--white);border-radius:10px;cursor:pointer;box-shadow:0 8px 26px rgba(107,81,196,0.12)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid rgba(20,20,24,0.08);padding:8px 12px;color:var(--text-dark);border-radius:8px;cursor:pointer}
+.btn-cta{background:var(--gold);color:#161616;padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:600}
+
+.container{max-width:980px;margin:28px auto;padding:16px}
+.hero{background:var(--card-bg);padding:28px;border-radius:16px;display:flex;flex-direction:column;gap:12px}
+.hero h2{margin:0;font-size:28px;color:var(--text-dark)}
+.hero p{margin:0;color:rgba(17,19,24,0.7)}
+
+.booking-section{margin-top:18px;background:var(--card-bg);padding:18px;border-radius:12px}
+.booking-form{display:flex;flex-direction:column;gap:12px}
+.form-row{display:flex;flex-direction:column}
+.form-row.split{display:flex;gap:12px}
+.form-row input,.form-row select,.form-row textarea{padding:10px;border-radius:8px;border:1px solid rgba(20,20,24,0.06);background:#fff;color:var(--text-dark)}
+.form-row input::placeholder,.form-row textarea::placeholder{color:rgba(17,19,24,0.4)}
+.form-actions{display:flex;gap:8px}
+.booking-response{margin-top:12px;color:var(--gold);font-weight:600}
+.maps-link{display:inline-block;margin-top:8px;color:var(--purple-2);font-weight:600;text-decoration:none}
+.maps-link.hidden{display:none}
+
+.mybookings-section{margin-top:18px;background:var(--card-bg);padding:16px;border-radius:12px}
+.bookings-list{display:flex;flex-direction:column;gap:12px}
+.booking-card{background:#fff;padding:12px;border-radius:10px;border:1px solid rgba(20,20,24,0.06);display:flex;justify-content:space-between;align-items:center}
+.booking-meta{display:flex;flex-direction:column}
+.booking-actions{display:flex;gap:8px}
+.hidden{display:none}
+
+.site-footer{padding:18px;text-align:center;color:var(--white);background:linear-gradient(90deg,var(--purple-2),var(--purple-1));border-top-left-radius:8px;border-top-right-radius:8px}
+
+.route-btn{background:transparent;border:1px solid rgba(17,19,24,0.06);padding:8px 10px;border-radius:8px;color:var(--purple-2);cursor:pointer}
+.route-btn:hover{background:rgba(123,76,223,0.06)}
+
+.payment-container{margin-top:16px;padding:16px;border-radius:8px;background:rgba(123,76,223,0.06);display:flex;flex-direction:column;gap:12px}
+.payment-container.hidden{display:none}
+
+
+@media (max-width:640px){.form-row.split{flex-direction:column}.brand-text h1{font-size:16px}}

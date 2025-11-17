@@ -1,0 +1,15 @@
+-- MySQL schema for Site See bookings (example)
+CREATE DATABASE IF NOT EXISTS site_see DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE site_see;
+
+CREATE TABLE IF NOT EXISTS bookings (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  external_id VARCHAR(128) DEFAULT NULL,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  date DATE NOT NULL,
+  time VARCHAR(16) NOT NULL,
+  guests INT DEFAULT 1,
+  notes TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
